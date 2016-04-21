@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+  Values:<br>
+  <input id="value1" type="text" name="sentence">
+  <input id="value2" type="text" name="sentence">
+  <br>
+</form>
+<button onclick="call()">Enter</button>
+
+<p id="scram"></p>
+
+<script>
+
+function call(){
+  v1 = new Date("June 13, 2014 08:11:00")
+  v2 = new Date("October 19, 2014 11:13:00");
+  console.log(monthDelta(v1,v2));
+}
+function monthDelta(v1,v2) {
+  return 1 + (v2.getMonth() - v1.getMonth() + (12 * (v2.getFullYear() - v1.getFullYear())));
+}
+
+</script>
+
+</body>
+</html>

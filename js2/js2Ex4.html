@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+	var items = [];
+	</script>
+<form>
+  Sample Screen::<br>
+  <input id="value1" type="text" name="sentence">
+</form>
+<button onclick="add()">Add</button>
+<button onclick="display()">Display</button>
+
+<p id="scram"></p>
+<script>
+
+function add(v1) {
+	var str = document.getElementById("value1").value;
+  	items.push(str);
+}
+function display() {
+  console.log(items);
+  document.getElementById("scram").innerHTML = "Element"items[0];
+}
+
+</script>
+
+</body>
+</html>

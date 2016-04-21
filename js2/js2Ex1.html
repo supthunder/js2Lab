@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+  Values:<br>
+  <input id="value1" type="text" name="sentence">
+  <input id="value2" type="text" name="sentence">
+  <br>
+</form>
+<button onclick="call()">Enter</button>
+
+<p id="scram"></p>
+
+<script>
+
+function call(){
+  console.log(gcd(12,13));
+  console.log(gcd(9,3));
+}
+function gcd(a,b) {
+    if (b > a) {
+      var temp = a; a = b; b = temp;
+    }
+    while (true) {
+        if (b == 0) return a;
+        a %= b;
+        if (a == 0) return b;
+        b %= a;
+    }
+}
+
+</script>
+
+</body>
+</html>

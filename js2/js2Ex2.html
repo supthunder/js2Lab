@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+  Values:<br>
+  <input id="value1" type="text" name="sentence">
+  <input id="value2" type="text" name="sentence">
+  <br>
+</form>
+<button onclick="call()">Enter</button>
+
+<p id="scram"></p>
+
+<script>
+
+function call(){
+  var v1 = ["Australia", "Germany", "United States of America"];
+  var v2 = ["Saab", "Volvo", "Long name car"];
+  console.log(getLongestCountryName(v1));
+  console.log(getLongestCountryName(v2));
+}
+function getLongestCountryName(v1) {
+  var count = 0;
+  var longest;
+  for(var i=0; i < v1.length; i++){
+    if(v1[i].length > count){
+        var lgth = v1[i].length;
+        longest = v1[i];
+    }
+  }
+  return longest;
+}
+
+</script>
+
+</body>
+</html>
