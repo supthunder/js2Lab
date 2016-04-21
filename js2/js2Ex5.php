@@ -15,17 +15,14 @@ $conn = new mysqli($host, $user, $password, $db, $port);
 if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 } 
-echo "Connected successfully";
 ?>
 </head>
 
 <body>
 <form method="post" action="<?=$_SERVER['PHP_SELF'];?>">
   Favorite Orioles:<br>
-	<input list="browsers" name="browser">
+	<input type="text" name="browsers" list="browsers" autocomplete="off">
   <datalist id="browsers">
-
-    <!-- NOTE NO JAVASCRIPT, JUST CALL THIS IN A JS FUNCTION -->
     <?php
   $sql = "SELECT favO FROM js2";
   $result = $conn->query($sql);
@@ -35,14 +32,17 @@ echo "Connected successfully";
 
   ?>
   </datalist>
-  <input type="submit">
+  <input type="submit" onClick="window.location.reload()">
 </form>
 
 
 <?php
-$v1 = $_POST["browser"];
+$v1 = $_POST["browsers"];
+echo $v1;
 $sql = "INSERT INTO js2 (favO)
 VALUES ('$v1')";
+ $result = $conn->query($sql);
+ 
 ?>
 
 </body>
